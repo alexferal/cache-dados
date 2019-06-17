@@ -4,7 +4,6 @@ public interface PublicacaoDAO {
 
     void salvarPublicacao(Publicacao publicacao);
     Publicacao recuperaPublicacao(String id);
-
     default Publicacao recuperaBanco(String id) {
         return null;
     }

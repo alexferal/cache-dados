@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.params.SetParams;
 
-import java.util.Optional;
-
 public class PublicacaoDAOJedis implements PublicacaoDAO {
 
     private Jedis jedis;
@@ -26,7 +24,7 @@ public class PublicacaoDAOJedis implements PublicacaoDAO {
 
     @Override
     public Publicacao recuperaPublicacao(String id) {
-        Publicacao publicacao = null;
+        Publicacao publicacao;
 
         if (buscaKey(id) == CacheResult.CACHE_MISS) {
             publicacao = recuperaBanco(id);
