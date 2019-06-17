@@ -5,13 +5,13 @@ import com.google.gson.Gson;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.params.SetParams;
 
-public class PublicacaoDAOJedis implements PublicacaoDAO {
+public class PublicacaoDAORedis implements PublicacaoDAO {
 
     private Jedis jedis;
     private Gson gson;
     private PublicacaoDAOPgSql publicacaoDAOPgSql;
 
-    public PublicacaoDAOJedis(){
+    public PublicacaoDAORedis(){
         jedis = new Jedis();
         gson = new Gson();
         publicacaoDAOPgSql = new PublicacaoDAOPgSql();

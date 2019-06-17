@@ -8,12 +8,12 @@ import java.util.Optional;
 public class PublicacaoDAOPgSql implements PublicacaoDAO {
 
     private Connection connection;
-    private PublicacaoDAOJedis publicacaoDAOJedis;
+    private PublicacaoDAORedis publicacaoDAORedis;
 
     public PublicacaoDAOPgSql(){
         ConnectionFactory connectionFactory = new ConnectionFactory();
         this.connection = connectionFactory.getConnection();
-        this.publicacaoDAOJedis = new PublicacaoDAOJedis();
+        this.publicacaoDAORedis = new PublicacaoDAORedis();
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PublicacaoDAOPgSql implements PublicacaoDAO {
             statement.setString(4, publicacao.getIdUsuario());
 
             statement.executeQuery();
-            publicacaoDAOJedis.salvarPublicacao(publicacao);
+            publicacaoDAORedis.salvarPublicacao(publicacao);
 
         } catch (SQLException e) {
             e.printStackTrace();
