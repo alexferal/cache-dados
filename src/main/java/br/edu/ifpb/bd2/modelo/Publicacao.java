@@ -4,23 +4,23 @@ import java.time.LocalDate;
 
 public class Publicacao {
 
-    private Integer id;
+    private String id;
     private String corpo;
     private LocalDate data;
     private String idUsuario;
 
-    public Publicacao(Integer id, String corpo, LocalDate data, String idUsuario) {
+    public Publicacao(String id, String corpo, LocalDate data, String idUsuario) {
         this.id = id;
         this.corpo = corpo;
         this.data = data;
         this.idUsuario = idUsuario;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
